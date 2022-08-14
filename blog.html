@@ -19,22 +19,37 @@
     <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 
     <!-- Custom Analytics -->
-	<script async defer data-website-id="bb1dda14-42e4-46d0-b654-3fc6be0d6a21" src="https://analytics.blitzesports.org/umami.js"></script>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "d7mq1qpeej");
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJPVGS8002"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-	<!-- Site Info -->
-	<meta property="st:title" content="Blog" />
-	<meta name="description" content="Check out the latest BLITZ Esports blog!" />
-	<link rel="canonical" href="/" />
-	<meta property="og:site_name" content="BLITZ Esports" />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Blog × BLITZ" />
-	<meta property="og:url" content="/" />
-	<meta property="og:description" content="Check out the latest BLITZ Esports blog!" />
-	<meta name="twitter:creator" content="@blitzbrawlstars" />
-	<meta name="twitter:url" content="/" />
-	<meta name="twitter:title" content="Blog × BLITZ" />
-	<meta name="twitter:description" content="Check out the latest BLITZ Esports blog!" />
-	<meta name="theme-color" content="#EF5525">
+        gtag('config', 'G-LJPVGS8002');
+    </script>
+
+    <!-- Site Info -->
+    <meta property="st:title" content="Blog" />
+    <meta name="description" content="Check out the latest BLITZ Esports blog!" />
+    <link rel="canonical" href="/" />
+    <meta property="og:site_name" content="BLITZ Esports" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Blog × BLITZ" />
+    <meta property="og:url" content="/" />
+    <meta property="og:description" content="Check out the latest BLITZ Esports blog!" />
+    <meta name="twitter:creator" content="@blitzbrawlstars" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:title" content="Blog × BLITZ" />
+    <meta name="twitter:description" content="Check out the latest BLITZ Esports blog!" />
+    <meta name="theme-color" content="#EF5525">
 </head>
 
 <body>
@@ -59,10 +74,14 @@
 
                     <div class="top-right">
                         <ul class="social-icons">
-                            <li><a href="https://link.blitzesports.org/discord"><span class="fab fa-discord"></span></a></li>
-							<li><a href="https://link.blitzesports.org/twitter"><span class="fab fa-twitter"></span></a></li>
-							<li><a href="https://link.blitzesports.org/youtube"><span class="fab fa-youtube"></span></a></li>
-							<li><a href="https://link.blitzesports.org/instagram"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://link.blitzesports.org/discord"><span class="fab fa-discord"></span></a>
+                            </li>
+                            <li><a href="https://link.blitzesports.org/twitter"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li><a href="https://link.blitzesports.org/youtube"><span class="fab fa-youtube"></span></a>
+                            </li>
+                            <li><a href="https://link.blitzesports.org/instagram"><span
+                                        class="fab fa-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +93,7 @@
                     <div class="auto-container clearfix">
                         <!--Logo-->
                         <div class="logo-outer">
-                            <div class="logo"><a href="index.html"><img src="images/logo.png" alt=""
+                            <div class="logo"><a href="/"><img src="images/logo.png" alt=""
                                         title="BLITZ — A Mobile eSports Organization"></a></div>
                         </div>
 
@@ -87,15 +106,15 @@
                             <nav class="main-menu navbar-expand-md navbar-light">
                                 <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                     <ul class="navigation clearfix pull-left">
-                                        <li><a href="index.html">Home</a> </li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-										<li><a href="faq.html">FAQs</a></li>
+                                        <li><a href="/">Home</a> </li>
+                                        <li><a href="/gallery">Gallery</a></li>
+                                        <li><a href="/faq">FAQs</a></li>
                                     </ul>
 
                                     <ul class="navigation pull-right clearfix">
-                                        <li><a href="about-us.html">About Us</a></li>
-                                        <li><a href="blogs.html">Blogs</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="/about">About</a></li>
+                                        <li><a href="/blogs">Blog</a></li>
+                                        <li><a href="/contact">Contact</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -111,7 +130,7 @@
                 <div class="auto-container clearfix">
                     <!--Logo-->
                     <div class="logo pull-left">
-                        <a href="index.html" title=""><img src="images/logo.png" alt="" title=""></a>
+                        <a href="/" title=""><img src="images/logo.png" alt="" title=""></a>
                     </div>
                     <!--Right Col-->
                     <div class="pull-right">
@@ -129,17 +148,21 @@
                 <div class="close-btn"><span class="icon flaticon-close"></span></div>
 
                 <nav class="menu-box">
-                    <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="" title=""></a></div>
+                    <div class="nav-logo"><a href="/"><img src="images/logo.png" alt="" title=""></a></div>
                     <div class="menu-outer">
                         <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                     </div>
                     <!--Social Links-->
                     <div class="social-links">
                         <ul class="clearfix">
-                            <li><a href="https://link.blitzesports.org/discord"><span class="fab fa-discord"></span></a></li>
-							<li><a href="https://link.blitzesports.org/twitter"><span class="fab fa-twitter"></span></a></li>
-							<li><a href="https://link.blitzesports.org/youtube"><span class="fab fa-youtube"></span></a></li>
-							<li><a href="https://link.blitzesports.org/instagram"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://link.blitzesports.org/discord"><span class="fab fa-discord"></span></a>
+                            </li>
+                            <li><a href="https://link.blitzesports.org/twitter"><span class="fab fa-twitter"></span></a>
+                            </li>
+                            <li><a href="https://link.blitzesports.org/youtube"><span class="fab fa-youtube"></span></a>
+                            </li>
+                            <li><a href="https://link.blitzesports.org/instagram"><span
+                                        class="fab fa-instagram"></span></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -170,11 +193,11 @@
 
                             <div class="social-links pull-right">
                                 <ul class="social-links">
-                                    <li><a href="blog.html#"><span class="fab fa-twitter"></span></a></li>
-                                    <li><a href="blog.html#"><span class="fab fa-facebook-square"></span></a>
+                                    <li><a href="blog.html"><span class="fab fa-twitter"></span></a></li>
+                                    <li><a href="blog.html"><span class="fab fa-facebook-square"></span></a>
                                     </li>
-                                    <li><a href="blog.html#"><span class="fab fa-pinterest-p"></span></a></li>
-                                    <li><a href="blog.html#"><span class="fab fa-instagram"></span></a></li>
+                                    <li><a href="blog.html"><span class="fab fa-pinterest-p"></span></a></li>
+                                    <li><a href="blog.html"><span class="fab fa-instagram"></span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -229,38 +252,39 @@
                         <div class="column col-lg-4 col-md-6 col-sm-12">
                             <div class="footer-widget logo-widget">
                                 <div class="logo">
-                                    <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                                    <a href="/"><img src="images/logo.png" alt="" /></a>
                                 </div>
-                                <div class="text">BLITZ is a Mobile eSports organization that is focused on a competitive and fun experience within gaming.</div>
+                                <div class="text">BLITZ is a Mobile eSports organization that is focused on a
+                                    competitive and fun experience within gaming.</div>
                             </div>
                         </div>
 
-                       <!--Column-->
-							<div class="column col-lg-4 col-md-6 col-sm-12">
-								<div class="footer-widget links-widget">
-									<div class="widget-content">
-										<div class="footer-title">
-											<h2></h2>
-										</div>
-										<div class="row clearfix">
-											<div class="column col-lg-6 col-md-6 col-sm-12">
-												<ul class="list">
-													<li><a href="index.html#">Home</a></li>
-													<li><a href="gallery.html#">Gallery</a></li>
-													<li><a href="faq.html#">FAQs</a></li>
-												</ul>
-											</div>
-											<div class="column col-lg-6 col-md-6 col-sm-12">
-												<ul class="list">
-													<li><a href="about-us.html#">About Us</a></li>
-													<li><a href="blogs.html#">Blogs</a></li>
-													<li><a href="contact.html#">Contact</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+                        <!--Column-->
+                        <div class="column col-lg-4 col-md-6 col-sm-12">
+                            <div class="footer-widget links-widget">
+                                <div class="widget-content">
+                                    <div class="footer-title">
+                                        <h2></h2>
+                                    </div>
+                                    <div class="row clearfix">
+                                        <div class="column col-lg-6 col-md-6 col-sm-12">
+                                            <ul class="list">
+                                                <li><a href="/">Home</a></li>
+                                                <li><a href="/gallery">Gallery</a></li>
+                                                <li><a href="/faq">FAQs</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="column col-lg-6 col-md-6 col-sm-12">
+                                            <ul class="list">
+                                                <li><a href="/about">About</a></li>
+                                                <li><a href="/blogs">Blog</a></li>
+                                                <li><a href="/contact">Contact</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!--Column-->
                         <div class="column col-lg-4 col-md-6 col-sm-12">
@@ -274,7 +298,8 @@
                                         <div class="form-group clearfix">
                                             <input type="email" name="email" value="" placeholder="Email address"
                                                 required>
-                                            <button type="submit" class="theme-btn newsletter-btn umami--click--newsletter-button"><span
+                                            <button type="submit"
+                                                class="theme-btn newsletter-btn umami--click--newsletter-button"><span
                                                     class="fas fa-envelope"></span></button>
                                         </div>
                                     </form>
@@ -301,10 +326,14 @@
                         <!-- Column -->
                         <div class="column col-lg-6 col-md-12 col-sm-12">
                             <ul class="social-icons">
-                                <li><a href="https://link.blitzesports.org/discord"><span class="fab fa-discord"></span></a></li>
-							<li><a href="https://link.blitzesports.org/twitter"><span class="fab fa-twitter"></span></a></li>
-							<li><a href="https://link.blitzesports.org/youtube"><span class="fab fa-youtube"></span></a></li>
-							<li><a href="https://link.blitzesports.org/instagram"><span class="fab fa-instagram"></span></a></li>
+                                <li><a href="https://link.blitzesports.org/discord"><span
+                                            class="fab fa-discord"></span></a></li>
+                                <li><a href="https://link.blitzesports.org/twitter"><span
+                                            class="fab fa-twitter"></span></a></li>
+                                <li><a href="https://link.blitzesports.org/youtube"><span
+                                            class="fab fa-youtube"></span></a></li>
+                                <li><a href="https://link.blitzesports.org/instagram"><span
+                                            class="fab fa-instagram"></span></a></li>
                             </ul>
                         </div>
                     </div>

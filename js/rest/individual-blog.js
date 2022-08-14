@@ -78,7 +78,7 @@ this.body.addEventListener("pageLoaded", async () => {
                                         <div class="post-date">${new Date(createdAt).toLocaleDateString()}</div>
                                         <h3>${title}</h3>
                                         <ul class="post-info">
-                                            <li>by <a href="blog.html#">${authorName}</a></li>
+                                            <li>by <a href="blog.html">${authorName}</a></li>
                                         </ul>
                                         <p>${content}</p>
                                     </div>
