@@ -2,16 +2,7 @@ this.body.addEventListener("pageLoaded", async () => {
 
     const faqDiv = document.getElementById("faq-container");
 
-    const faqData = await this.graphql(`
-    query MyQuery {
-        faQs {
-          author
-          id
-          content
-          title
-        }
-      }    
-    `);
+    const faqData = await this.api("faq");
 
     const converter = new showdown.Converter();
 
@@ -22,8 +13,8 @@ this.body.addEventListener("pageLoaded", async () => {
     <div class="icon-box">
     <span class="icon flaticon-question"></span>
     </div>
-    <h3>${faq.title}</h3>
-    <div class="text">${converter.makeHtml(faq.content)}</div>
+    <h3>${faq.fields.title}</h3>
+    <div class="text">${converter.makeHtml(faq.fields.content)}</div>
     </div>
     </div>
     `

@@ -1,29 +1,18 @@
 this.body.addEventListener("pageLoaded", async () => {
 
-  const headerDiv = document.getElementById("header-container");
-  const bannerCarousel = document.getElementsByClassName("banner-carousel");
+	const headerDiv = document.getElementById("header-container");
+	const bannerCarousel = document.getElementsByClassName("banner-carousel");
 
-    const headerData = await this.graphql(`
-    query MyQuery {
-        headers {
-          id
-          url
-          title
-          buttonText
-          thumbnail
-		  resize
-        }
-      }       
-    `);
+	const headerData = await this.api("header");
 
+	const data = headerData.map((hData, i) => {
+		const { fields } = hData;
+		const { URL: url, Title: title, "Button Text": buttonText, Thumbnail: thumbnail } = fields;
 
-   const data = headerData.map((hData, i) => {
-        const { url, title, buttonText , thumbnail , resize } = hData;
-
-        return `
+		return `
                <div class="slide-item">
 					<div class="image-layer" id="header-thumbnail-1"
-						style="background-image:url(${resize ? `https://imageproxy.blitzesports.org/-/rs:fit:1800:800/plain/${thumbnail}` : thumbnail})">
+						style="background-image:url(${thumbnail})">
 					</div>
 
 					<div class="auto-container">
@@ -40,33 +29,33 @@ this.body.addEventListener("pageLoaded", async () => {
 					</div>
 				</div>
         `
-    });
+	});
 
-    headerDiv.innerHTML = data.join("\n");
+	headerDiv.innerHTML = data.join("\n");
 
 
-    $(".banner-carousel").owlCarousel({
-			video: true,
-			loop: true,
-			margin: 0,
-			nav: true,
-			smartSpeed: 500,
-			autoplay: 6000,
-			navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
-			responsive: {
-				0: {
-					items: 1
-				},
-				600: {
-					items: 1
-				},
-				800: {
-					items: 1
-				},
-				1024: {
-					items: 1
-				}
+	$(".banner-carousel").owlCarousel({
+		video: true,
+		loop: true,
+		margin: 0,
+		nav: true,
+		smartSpeed: 500,
+		autoplay: 6000,
+		navText: ['<span class="fa fa-angle-left"></span>', '<span class="fa fa-angle-right"></span>'],
+		responsive: {
+			0: {
+				items: 1
+			},
+			600: {
+				items: 1
+			},
+			800: {
+				items: 1
+			},
+			1024: {
+				items: 1
 			}
-		});
+		}
+	});
 
 });

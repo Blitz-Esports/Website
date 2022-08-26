@@ -1,6 +1,11 @@
 (function ($) {
 	this.body = document.getElementsByClassName("page-wrapper")[0];
 
+	this.api = async function (route) {
+		const response = await fetch(`https://api.blitzesports.org/${route}`);
+		return await response.json();
+	}
+
 	this.graphql = async function (query) {
 		const response = await fetch(
 			"https://api.baseql.com/airtable/graphql/apptqnWFREJiuuggI",
