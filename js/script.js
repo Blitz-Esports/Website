@@ -2,7 +2,7 @@
 	this.body = document.getElementsByClassName("page-wrapper")[0];
 
 	this.api = async function (route) {
-		const response = await fetch(`https://api.blitzesports.org/${route}`);
+		const response = await fetch(`https://aggregator.blitzesports.org/${route}`);
 		return await response.json();
 	}
 
