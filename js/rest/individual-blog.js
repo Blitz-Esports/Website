@@ -43,7 +43,7 @@ this.body.addEventListener("pageLoaded", async () => {
     // Update blog author
     let authorAvatar = "images/avatars/default.png";
     if (targetBlog["Author Avatar"] && targetBlog["Author Avatar"].startsWith("avatars")) authorAvatar = `images/${targetBlog["Author Avatar"]}`;
-    else if (targetBlog["Author Avatar"]) authorAvatar = `https://api.blitzesports.org/resize/${targetBlog["Author Avatar"]}?w=160&h=166`
+    else if (targetBlog["Author Avatar"]) authorAvatar = `https://aggregator.blitzesports.org/resize/${targetBlog["Author Avatar"]}?w=160&h=166`
 
     blogAuthorDiv.innerHTML = `
     <figure class="thumb"><img src="${authorAvatar}" alt=""></figure>
