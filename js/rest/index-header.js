@@ -1,9 +1,9 @@
-this.body.addEventListener("pageLoaded", async () => {
+this.body.addEventListener("pageLoaded", async (iData) => {
 
 	const headerDiv = document.getElementById("header-container");
 	const bannerCarousel = document.getElementsByClassName("banner-carousel");
 
-	const headerData = await this.api("header");
+	const headerData = this.transData(iData, "header");
 
 	const data = headerData.map((hData, i) => {
 		const { fields } = hData;

@@ -1,10 +1,10 @@
-this.body.addEventListener("pageLoaded", async () => {
+this.body.addEventListener("pageLoaded", async (data) => {
 
     // Get the gallery div
     const galleryDiv = document.getElementById('gallery-container');
 
     // Fetch the blog posts
-    const galleryData = await this.api("gallery");
+    const galleryData = this.transData(data, "gallery");
 
     galleryData.forEach((galleryImage, index) => {
         const post = createGalleryH(galleryImage, index);

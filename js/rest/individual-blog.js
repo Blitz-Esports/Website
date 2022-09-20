@@ -1,17 +1,18 @@
-this.body.addEventListener("pageLoaded", async () => {
+this.body.addEventListener("pageLoaded", async (data) => {
 
     // Get the blog posts div
     const blogPostsDiv = document.getElementById('blog-container');
     const blogWidgetDiv = document.getElementById('blog-widget-container');
     const blogTagsDiv = document.getElementById('blog-tags-container');
     const blogAuthorDiv = document.getElementById('blog-author-container');
+    const blogShareDiv = document.getElementById('blog-share-container');
 
     // Get blog ID
     const params = new URLSearchParams(window.location.search);
     const blogId = params.get('id');
 
     // Fetch the blog posts & insert data
-    const blogPostsData = await this.api("blog");
+    const blogPostsData = this.transData(data, `blog`);
     const targetBlog = blogPostsData.find(blogPost => blogPost.id === blogId) || blogPostsData[0];
     blogPostsDiv.innerHTML = createBlogPost(targetBlog);
 
@@ -21,10 +22,10 @@ this.body.addEventListener("pageLoaded", async () => {
         return `
         <article class="post">
         <div class="post-inner">
-            <figure class="post-thumb"><a href="blog.html?id=${id}"><img
+            <figure class="post-thumb"><a href="blog?id=${id}"><img
                         src="${Thumbnail}" alt=""></a></figure>
             <div class="post-info">${new Date(createdAt).toLocaleDateString()}</div>
-            <div class="text"><a href="blog.html?id=${id}">${Title}</a></div>
+            <div class="text"><a href="blog?id=${id}">${Title}</a></div>
         </div>
         </article>
         `
@@ -67,5 +68,16 @@ this.body.addEventListener("pageLoaded", async () => {
                                     </div>
         `
     };
+
+    // Update share links
+    const baseShareLink = `https://aggregator.blitzesports.org/blog/${targetBlog.id}/share?social`;
+    blogShareDiv.innerHTML = `
+    <ul class="social-links">
+    <li><a href="${baseShareLink}=twitter"><span class="fab fa-twitter"></span></a></li>
+    <li><a href="${baseShareLink}=reddit"><span class="fab fa-reddit"></span></a></li>
+    <li><a href="${baseShareLink}=telegram"><span class="fab fa-telegram"></span></a></li>
+    <li><a href="${baseShareLink}=linkedin"><span class="fab fa-linkedin"></span></a></li>
+    </ul>
+    `;
 
 })
