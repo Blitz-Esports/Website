@@ -7,6 +7,9 @@ this.body.addEventListener("pageLoaded", async (data) => {
     const blogAuthorDiv = document.getElementById('blog-author-container');
     const blogShareDiv = document.getElementById('blog-share-container');
 
+    // Markdown to HTML
+    const converter = new showdown.Converter();
+
     // Get blog ID
     const params = new URLSearchParams(window.location.search);
     const blogId = params.get('id');
@@ -44,7 +47,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
     // Update blog author
     let authorAvatar = "images/avatars/default.png";
     if (targetBlog["Author Avatar"] && targetBlog["Author Avatar"].startsWith("avatars")) authorAvatar = `images/${targetBlog["Author Avatar"]}`;
-    else if (targetBlog["Author Avatar"]) authorAvatar = `https://aggregator.blitzesports.org/resize/${targetBlog["Author Avatar"]}?w=160&h=166`
+    else if (targetBlog["Author Avatar"]) authorAvatar = `https://aggregator.blitzesports.org/resize/${targetBlog["Author Avatar"]}?w=160&h=166&c=true`
 
     blogAuthorDiv.innerHTML = `
     <figure class="thumb"><img src="${authorAvatar}" alt=""></figure>
@@ -64,7 +67,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
                                         <ul class="post-info">
                                             <li>by <a href="blog.html">${authorName}</a></li>
                                         </ul>
-                                        <p>${Content}</p>
+                                        <p>${converter.makeHtml(Content)}</p>
                                     </div>
         `
     };
