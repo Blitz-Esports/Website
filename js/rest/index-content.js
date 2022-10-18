@@ -1,4 +1,3 @@
-/*
 this.body.addEventListener("pageLoaded", async (data) => {
 
     // Get the content div
@@ -19,7 +18,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							<div class="gallery-block">
 								<div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
 									<div class="image">
-										<img src="https://aggregator.blitzesports.org/resize/${thumbnail}?h=570&w=530&crop=true" alt="">
+										<img src="https://aggregator.blitzesports.org/resize/${thumbnail}%3Ft%3D${Date.now()}?h=570&w=530&crop=true" alt="">
 										<div class="overlay-box">
 											<div class="overlay-inner">
 												<a href="${url}" class="lightbox-image play-box"><span class="flaticon-play-button"><i class="ripple"></i></span></a>
@@ -46,7 +45,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							<div class="gallery-block-two">
 								<div class="inner-box wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
 									<div class="image hvr-bob">
-										<img src="https://aggregator.blitzesports.org/resize/${thumbnail}?h=290&w=570&crop=true" alt="">
+										<img src="https://aggregator.blitzesports.org/resize/${thumbnail}%3Ft%3D${Date.now()}?h=290&w=570&crop=true" alt="">
 										<div class="overlay-box">
 											<a href="${url}" class="lightbox-image overlay-link"></a>
 											<h3><span class="icon flaticon-play-button"></span>${title}</h3>
@@ -59,7 +58,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							<div class="gallery-block-two">
 								<div class="inner-box wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
 									<div class="image hvr-bob">
-										<img src="https://aggregator.blitzesports.org/resize/${contentData[2]?.thumbnail}?h=290&w=570&crop=true" alt="">
+										<img src="https://aggregator.blitzesports.org/resize/${contentData[2]?.thumbnail}%3Ft%3D${Date.now()}?h=290&w=570&crop=true" alt="">
 										<div class="overlay-box">
 											<a href="${contentData[2]?.url}" class="lightbox-image overlay-link"></a>
 											<h3><span class="icon flaticon-play-button"></span>${contentData[2]?.title}</h3>
@@ -75,4 +74,3 @@ this.body.addEventListener("pageLoaded", async (data) => {
     }).join("\n");
 
 })
-*/
