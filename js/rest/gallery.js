@@ -4,7 +4,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
     const galleryDiv = document.getElementById('gallery-container');
 
     // Fetch the blog posts
-    const galleryData = this.transData(data, "gallery");
+    const galleryData = this.transData(data, "website/gallery");
 
     galleryData.forEach((galleryImage, index) => {
         const post = createGalleryH(galleryImage, index);

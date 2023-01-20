@@ -3,11 +3,10 @@ this.body.addEventListener("pageLoaded", async (iData) => {
 	const headerDiv = document.getElementById("header-container");
 	const bannerCarousel = document.getElementsByClassName("banner-carousel");
 
-	const headerData = this.transData(iData, "header");
+	const headerData = this.transData(iData, "website/header");
 
 	const data = headerData.map((hData, i) => {
-		const { fields } = hData;
-		const { URL: url, Title: title, "Button Text": buttonText, Thumbnail: thumbnail } = fields;
+		const { url, title, buttonText, thumbnail } = hData.fields;
 
 		return `
                <div class="slide-item">

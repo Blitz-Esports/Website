@@ -3,7 +3,7 @@
 
 	this.api = async function (route) {
 		console.log(`%c Fetch: /${route}`, 'color: yellow;');
-		const response = await fetch(`https://api.blitzesports.org/${route}`);
+		const response = await fetch(`http://localhost:3000/v2/${route}`);
 		const data = await response.json();
 		console.log(`%c Success: /${route}`, 'color: green;');
 		return data;
@@ -308,21 +308,15 @@
 
 let ApiMap = {
 	index: [
-		"header",
-		"faq",
-		"content",
-		"blog"
+		"website/header",
+		"website/faq",
+		"website/content",
+		"blog/posts"
 	],
 	gallery: [
-		"gallery"
+		"website/gallery"
 	],
 	faq: [
-		"faq"
-	],
-	blogs: [
-		"blog"
-	],
-	blog: [
-		"blog"
+		"website/faq"
 	]
 }

@@ -1,16 +1,17 @@
 this.body.addEventListener("pageLoaded", async (data) => {
 
-    // Get the content div
-    const contentDiv = document.getElementById('content-container');
+	// Get the content div
+	const contentDiv = document.getElementById('content-container');
 
-    // Fetch content data
-    const contentData = this.transData(data, "content");
+	// Fetch content data
+	const contentData = this.transData(data, "website/content");
 
-    contentDiv.innerHTML = contentData.slice(0 , 3).map((data, i) => {
-        const { url, thumbnail, title } = data;
+	contentDiv.innerHTML = contentData.slice(0, 3).map((data, i) => {
+		const { url, thumbnail, title } = data.fields;
+		const resizeBaseURL = `http://localhost:3000/v2/resize/image`;
 
-        if (i === 0) {
-            return `
+		if (i === 0) {
+			return `
         <!-- Column -->
 						<div class="column col-lg-6 col-md-12 col-sm-12">
 							
@@ -18,7 +19,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							<div class="gallery-block">
 								<div class="inner-box wow fadeInLeft animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInLeft;">
 									<div class="image">
-										<img src="https://aggregator.blitzesports.org/resize/${thumbnail}%3Ft%3D${Date.now()}?h=570&w=530&crop=true" alt="">
+										<img src="${resizeBaseURL}/${thumbnail}%3Ft%3D${Date.now()}?h=570&w=530&crop=true" alt="">
 										<div class="overlay-box">
 											<div class="overlay-inner">
 												<a href="${url}" class="lightbox-image play-box"><span class="flaticon-play-button"><i class="ripple"></i></span></a>
@@ -34,10 +35,9 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							
 						</div>
         `
-        }
-        else if(i === 1) {
-            
-            return `
+		}
+		else if (i === 1) {
+			return `
             <!-- Column -->
 						<div class="column col-lg-6 col-md-12 col-sm-12">
 							
@@ -45,7 +45,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							<div class="gallery-block-two">
 								<div class="inner-box wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
 									<div class="image hvr-bob">
-										<img src="https://aggregator.blitzesports.org/resize/${thumbnail}%3Ft%3D${Date.now()}?h=290&w=570&crop=true" alt="">
+										<img src="${resizeBaseURL}/${thumbnail}%3Ft%3D${Date.now()}?h=290&w=570&crop=true" alt="">
 										<div class="overlay-box">
 											<a href="${url}" class="lightbox-image overlay-link"></a>
 											<h3><span class="icon flaticon-play-button"></span>${title}</h3>
@@ -58,10 +58,10 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							<div class="gallery-block-two">
 								<div class="inner-box wow fadeInRight animated" data-wow-delay="0ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInRight;">
 									<div class="image hvr-bob">
-										<img src="https://aggregator.blitzesports.org/resize/${contentData[2]?.thumbnail}%3Ft%3D${Date.now()}?h=290&w=570&crop=true" alt="">
+										<img src="${resizeBaseURL}/${contentData[2]?.fields?.thumbnail}%3Ft%3D${Date.now()}?h=290&w=570&crop=true" alt="">
 										<div class="overlay-box">
-											<a href="${contentData[2]?.url}" class="lightbox-image overlay-link"></a>
-											<h3><span class="icon flaticon-play-button"></span>${contentData[2]?.title}</h3>
+											<a href="${contentData[2]?.fields?.url}" class="lightbox-image overlay-link"></a>
+											<h3><span class="icon flaticon-play-button"></span>${contentData[2]?.fields?.title}</h3>
 										</div>
 									</div>
 								</div>
@@ -69,8 +69,6 @@ this.body.addEventListener("pageLoaded", async (data) => {
 							
 						</div>
             `
-        }
-
-    }).join("\n");
-
-})
+		}
+	}).join("\n");
+});

@@ -1,7 +1,7 @@
 this.body.addEventListener("pageLoaded", async (data) => {
     const faqDiv = document.getElementById("faq-container");
 
-    const faqData = this.transData(data, "faq");
+    const faqData = this.transData(data, "website/faq");
 
     const converter = new showdown.Converter();
 
