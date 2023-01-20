@@ -3,7 +3,7 @@
 
 	this.api = async function (route) {
 		console.log(`%c Fetch: /${route}`, 'color: yellow;');
-		const response = await fetch(`http://localhost:3000/v2/${route}`);
+		const response = await fetch(`https://api.blitzesports.org/v2/${route}`);
 		const data = await response.json();
 		console.log(`%c Success: /${route}`, 'color: green;');
 		return data;
