@@ -8,7 +8,7 @@ this.body.addEventListener("pageLoaded", async (data) => {
 
 	contentDiv.innerHTML = contentData.slice(0, 3).map((data, i) => {
 		const { url, thumbnail, title } = data.fields;
-		const resizeBaseURL = `http://localhost:3000/v2/resize/image`;
+		const resizeBaseURL = `https://api.blitzesports.org/v2/resize/image`;
 
 		if (i === 0) {
 			return `
